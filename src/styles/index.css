@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* fonts.css */
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('/fonts/instrument-sans/InstrumentSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
