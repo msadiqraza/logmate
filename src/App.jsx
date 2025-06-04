@@ -103,14 +103,7 @@ const BatteryIcon = ({ className = "w-8 h-8", color = "currentColor" }) => (
 	</svg>
 );
 const QualityIcon = ({ className = "w-8 h-8", color = "currentColor" }) => (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="64"
-		height="64"
-		viewBox="0 0 64 64"
-		className={className}
-		fill={color}
-	>
+	<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" className={className} fill={color}>
 		<path d="M49.77 16.2A23.31 23.31 0 0043 14.45a23.85 23.85 0 00-21.92 0 23.31 23.31 0 00-6.77 1.75C10.2 18.31 8 22.53 8 27.2v1.6c0 4.67 2.2 8.89 6.31 10.95a23.31 23.31 0 006.77 1.75c3.92.83 8 1.25 12.08 1.25s8.16-.42 12.08-1.25a23.31 23.31 0 006.77-1.75C54.05 37.69 56 33.47 56 28.8v-1.6c0-4.67-2.2-8.89-6.23-10.95zM32.08 44c-9.83 0-18.67-2.33-22.5-6V26c3.83-3.67 12.67-6 22.5-6s18.67 2.33 22.5 6v12c-3.83 3.67-12.67 6-22.5 6z"></path>
 		<path d="M32.08 23c-7.83 0-14.67 1.67-17.5 3.58V18c4.83-2.67 12.5-4 17.5-4s12.67 1.33 17.5 4v8.58c-2.83-1.91-9.67-3.58-17.5-3.58z"></path>
 	</svg>
@@ -318,8 +311,7 @@ const Navbar = () => {
 																			href="#"
 																			className="block text-sm text-gray-700 hover:text-[#EF2E24] transition-colors"
 																			style={{
-																				fontFamily:
-																					"'Instrument Sans', sans-serif",
+																				fontFamily: "'Instrument Sans', sans-serif",
 																			}}
 																		>
 																			{item}
@@ -349,8 +341,7 @@ const Navbar = () => {
 																			href="#"
 																			className="block text-sm text-gray-700 hover:text-[#EF2E24] transition-colors"
 																			style={{
-																				fontFamily:
-																					"'Instrument Sans', sans-serif",
+																				fontFamily: "'Instrument Sans', sans-serif",
 																			}}
 																		>
 																			{item}
@@ -380,8 +371,7 @@ const Navbar = () => {
 																			href="#"
 																			className="block text-sm text-gray-700 hover:text-[#EF2E24] transition-colors"
 																			style={{
-																				fontFamily:
-																					"'Instrument Sans', sans-serif",
+																				fontFamily: "'Instrument Sans', sans-serif",
 																			}}
 																		>
 																			{item}
@@ -423,12 +413,7 @@ const Navbar = () => {
 							viewBox="0 0 24 24"
 							stroke="currentColor"
 						>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								d="M4 6h16M4 12h16m-7 6h7"
-							/>
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
 						</svg>
 					</button>
 				</div>
@@ -501,8 +486,8 @@ const HeroSection = () => {
 						variants={heroTextChildVariants}
 						custom={1}
 					>
-						Logmate Engineering and Services delivers high performance diesel generators and advanced
-						battery energy storage systems, ensuring uninterrupted power for industries across Pakistan.
+						Logmate Engineering and Services delivers high performance diesel generators and advanced battery energy
+						storage systems, ensuring uninterrupted power for industries across Pakistan.
 					</motion.p>
 					<motion.a
 						href="#"
@@ -568,8 +553,8 @@ const AboutSection = () => {
 								fontFamily: "'Instrument Sans', sans-serif",
 							}}
 						>
-							Delivering world-class Italian-engineered power solutions with full authenticity, support,
-							and reliability — only from Logmate.
+							Delivering world-class Italian-engineered power solutions with full authenticity, support, and reliability
+							— only from Logmate.
 						</p>
 						<a
 							href="#"
@@ -648,8 +633,8 @@ const ProductSection = () => {
 							fontFamily: "'Instrument Sans', sans-serif",
 						}}
 					>
-						Engineered for excellence, backed by support you can count on discover the power systems trusted
-						by professionals worldwide.
+						Engineered for excellence, backed by support you can count on discover the power systems trusted by
+						professionals worldwide.
 					</p>
 					<a
 						href="#"
@@ -973,8 +958,8 @@ const FeaturesSection = () => {
 							fontFamily: "'Instrument Sans', sans-serif",
 						}}
 					>
-						Engineered to perform, trusted by industries across Pakistan and beyond. Discover resilient
-						power systems tailored to your operational needs — with support you can count on.
+						Engineered to perform, trusted by industries across Pakistan and beyond. Discover resilient power systems
+						tailored to your operational needs — with support you can count on.
 					</p>
 					<a
 						href="#"
@@ -1195,8 +1180,8 @@ const CtaSection = () => {
 						fontFamily: "'Instrument Sans', sans-serif",
 					}}
 				>
-					Logmate Engineering and Services offers after-sales support &amp; customer warranties that ensure
-					long-term reliability, reduce downtime, and protect your investment.
+					Logmate Engineering and Services offers after-sales support &amp; customer warranties that ensure long-term
+					reliability, reduce downtime, and protect your investment.
 				</p>
 				<a
 					href="./contact-sales"
@@ -1285,9 +1270,8 @@ const Footer = () => {
 								fontFamily: "'Instrument Sans', sans-serif",
 							}}
 						>
-							Be the first to learn about our latest projects, product updates, and industry news. By
-							clicking 'Sign Up' you agree to receive emails from Logmate. You may unsubscribe at any
-							time.
+							Be the first to learn about our latest projects, product updates, and industry news. By clicking 'Sign Up'
+							you agree to receive emails from Logmate. You may unsubscribe at any time.
 						</p>
 						<form className="flex">
 							<input
