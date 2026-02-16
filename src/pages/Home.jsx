@@ -258,44 +258,58 @@ const Home = () => {
     },
   ];
 
+  const partners = [
+    "/clients/AIOU.png",
+    "/clients/Bahria.png",
+    "/clients/COMSATS.png",
+    "/clients/FFC.png",
+    "/clients/Huawei.png",
+    "/clients/NLC.png",
+    "/clients/OPF.png",
+    "/clients/bzu.png",
+    "/clients/dha.jpg",
+    "/clients/fwo.png",
+    "/clients/hec.png",
+    "/clients/nova.jpg",
+    "/clients/ptcl.png",
+    "/clients/ptv.png",
+    "/clients/tgdc.jpg",
+    "/clients/university-of-peshawar.png",
+  ];
+
   const clientReviews = [
     {
       quote:
         "Logmate's professionalism and expertise in power solutions are unmatched. Their team ensured our factory was up and running with minimal downtime.",
       name: "Ahmed Khan",
       post: "Operations Director",
-      company: "Textile Mills Ltd.",
+      company: "University of Peshawar",
+      logo: "/clients/university-of-peshawar.png",
     },
     {
       quote:
         "The solar installation provided by Logmate has significantly reduced our energy costs. Highly recommended for sustainable solutions.",
       name: "Sara Ali",
       post: "CEO",
-      company: "Green Innovations",
+      company: "The Gulzar Design Consortium",
+      logo: "/clients/tgdc.jpg",
     },
     {
       quote:
         "Reliable, efficient, and always available for support. Logmate is our go-to partner for all electrical engineering needs.",
       name: "Usman Tariq",
       post: "Project Manager",
-      company: "ConstructCo",
+      company: "Higher Education Commission, Pakistan",
+      logo: "/clients/hec.png",
     },
     {
       quote:
         "Their attention to detail and commitment to quality is impressive. We are extremely satisfied with their transformer services.",
       name: "Faisal Rehman",
       post: "Chief Engineer",
-      company: "PowerGrid Solutions",
+      company: "Bahauddin Zakariya University",
+      logo: "/clients/bzu.png",
     },
-  ];
-
-  const partners = [
-    "https://via.placeholder.com/150?text=Siemens",
-    "https://via.placeholder.com/150?text=Schneider",
-    "https://via.placeholder.com/150?text=ABB",
-    "https://via.placeholder.com/150?text=Perkins",
-    "https://via.placeholder.com/150?text=CAT",
-    "https://via.placeholder.com/150?text=Cummins",
   ];
 
   return (
@@ -618,7 +632,7 @@ const Home = () => {
             className="pb-12"
           >
             {clientReviews.map((review, idx) => (
-              <SwiperSlide key={idx} className="h-auto">
+              <SwiperSlide key={idx} className="!h-[300px] mb-14">
                 <div className="bg-gray-50 p-8 rounded-2xl h-full flex flex-col justify-between border border-gray-100">
                   <div className="mb-6">
                     <div className="text-[#EF2E24] mb-4">
@@ -637,8 +651,12 @@ const Home = () => {
                     </p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold text-xl">
-                      {review.name.charAt(0)}
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden border border-gray-100 shadow-sm shrink-0">
+                      <img
+                        src={review.logo}
+                        alt={review.company}
+                        className="w-full h-full object-contain p-2"
+                      />
                     </div>
                     <div>
                       <h4 className="font-bold text-[#181818] font-['Instrument_Sans']">
@@ -673,7 +691,7 @@ const Home = () => {
               768: { slidesPerView: 4 },
               1024: { slidesPerView: 5 },
             }}
-            className="opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
+            className="opacity-70 transition-all duration-500"
           >
             {partners.map((logo, idx) => (
               <SwiperSlide
@@ -683,7 +701,7 @@ const Home = () => {
                 <img
                   src={logo}
                   alt={`Partner ${idx + 1}`}
-                  className="max-h-12 w-auto object-contain"
+                  className="max-h-24 w-auto object-contain"
                 />
               </SwiperSlide>
             ))}
