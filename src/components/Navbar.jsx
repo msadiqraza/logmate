@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Download } from "lucide-react";
 
 // Mega Menu Data
 const productsMegaMenuData = {
@@ -283,6 +284,15 @@ const Navbar = () => {
               delay: 0.3 + navLinks.length * 0.1,
             }}
           >
+            <a
+              href="/handbook.pdf"
+              download="Logmate_Company_Profile.pdf"
+              className="hidden lg:inline-flex items-center justify-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 transition-colors mr-3"
+              style={{ fontFamily: "'Instrument Sans', sans-serif" }}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Company Profile
+            </a>
             <Link
               to="/contact"
               className="hidden lg:inline-flex items-center justify-center px-4 py-2 bg-[#EF2E24] text-white text-sm font-medium rounded-full hover:bg-red-700 transition-colors"
@@ -329,6 +339,15 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <a
+            href="/handbook.pdf"
+            download="Logmate_Company_Profile.pdf"
+            className="text-center mt-3 px-4 py-2.5 bg-white/10 border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 transition-colors flex items-center justify-center gap-2 w-full"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Download className="w-4 h-4" />
+            Company Profile
+          </a>
           <Link
             to="/contact"
             className="block text-center mt-3 px-4 py-2.5 bg-[#EF2E24] text-white text-sm font-medium rounded-full hover:bg-red-700 transition-colors"

@@ -1,6 +1,6 @@
 - change logo of logmate
 - change company name to full: Logmate  Engineering and Services Private Limited
-- button to download complete MS LOGMATE Profile.pdf on click
-- add client logos
+- button to download complete MS LOGMATE Profile.pdf on click [done]
+- fix client logos
 - social media logos
 - 
