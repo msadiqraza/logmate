@@ -1,5 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -153,6 +159,40 @@ const Footer = () => {
             </div>
           </div>
         </div>
+         {/* Social Media - Newly Added for Footer */}
+        <div className="flex justify-center gap-12 py-4 border-b border-white/10 mt-4">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noreferrer"
+            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#1877F2] transition-colors group"
+          >
+            <FaFacebookF className="text-white group-hover:scale-110 transition-transform" />
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#0077B5] transition-colors group"
+          >
+            <FaLinkedinIn className="text-white group-hover:scale-110 transition-transform" />
+          </a>
+          <a
+            href="https://wa.me/923001234567"
+            target="_blank"
+            rel="noreferrer"
+            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#25D366] transition-colors group"
+          >
+            <FaWhatsapp className="text-white group-hover:scale-110 transition-transform text-lg" />
+          </a>
+          <a
+            href="mailto:info@logmate.com.pk"
+            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#EA4335] transition-colors group"
+          >
+            <FaEnvelope className="text-white group-hover:scale-110 transition-transform" />
+          </a>
+        </div>
+
         <p
           className="text-sm opacity-70 leading-[1.5em] w-full pt-8 text-center"
           style={{ fontFamily: "'Instrument Sans', sans-serif" }}
@@ -160,6 +200,8 @@ const Footer = () => {
           © Logmate Engineering and Services Private Limited{" "}
           {new Date().getFullYear()} - All Rights Reserved
         </p>
+
+       
       </div>
     </footer>
   );

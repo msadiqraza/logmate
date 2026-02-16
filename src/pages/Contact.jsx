@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import React from "react";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -15,6 +21,50 @@ const Contact = () => {
         </div>
       </section>
 
+      <section className="bg-gray-50 py-16 border-b border-gray-100">
+        <div className="container mx-auto px-4 max-w-screen-xl text-center">
+          <h2 className="text-2xl font-bold text-[#181818] mb-8 font-['Instrument_Sans']">
+            Connect on Social Media
+          </h2>
+          <div className="flex justify-center flex-wrap gap-8">
+            <a
+              href="https://wa.me/923001234567"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold shadow-lg hover:bg-[#20bd5a] transition-all hover:-translate-y-1 transform group"
+            >
+              <FaWhatsapp className="text-3xl group-hover:scale-110 transition-transform" />
+              <span className="font-['Instrument_Sans'] text-lg">
+                Chat on WhatsApp
+              </span>
+            </a>
+            <div className="flex gap-4">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-14 h-14 bg-[#1877F2] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:bg-[#1559b3] transition-all hover:-translate-y-1 group"
+              >
+                <FaFacebookF className="group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-14 h-14 bg-[#0077B5] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:bg-[#005e93] transition-all hover:-translate-y-1 group"
+              >
+                <FaLinkedinIn className="group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="mailto:info@logmate.com.pk"
+                className="w-14 h-14 bg-[#EA4335] rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:bg-[#c53225] transition-all hover:-translate-y-1 group"
+              >
+                <FaEnvelope className="group-hover:scale-110 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8 max-w-screen-xl">
           <div className="flex flex-col lg:flex-row gap-12">

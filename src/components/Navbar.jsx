@@ -99,6 +99,7 @@ const Navbar = () => {
     { name: "About Us", href: "/about-us" },
     { name: "Services", href: "/services", isMegaMenu: true },
     { name: "Projects", href: "/projects" },
+    { name: "Contact", href: "/contact" },
     // { name: "Blog", href: "/blog" }, // Temporarily disabled if no blog content provided yet
   ];
 
@@ -295,7 +296,7 @@ const Navbar = () => {
             </a>
             <Link
               to="/contact"
-              className="hidden lg:inline-flex items-center justify-center px-4 py-2 bg-[#EF2E24] text-white text-sm font-medium rounded-full hover:bg-red-700 transition-colors"
+              className="hidden lg:inline-flex items-center justify-center border border-white/20 px-4 py-2 bg-[#EF2E24] text-white text-sm font-medium rounded-full hover:bg-red-700 transition-colors"
               style={{ fontFamily: "'Instrument Sans', sans-serif" }}
             >
               Contact Sales
@@ -350,7 +351,7 @@ const Navbar = () => {
           </a>
           <Link
             to="/contact"
-            className="block text-center mt-3 px-4 py-2.5 bg-[#EF2E24] text-white text-sm font-medium rounded-full hover:bg-red-700 transition-colors"
+            className="block text-center mt-3 px-4 py-2.5 bg-[#EF2E24] border border-white/20 text-white text-sm font-medium rounded-full hover:bg-red-700 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Sales
