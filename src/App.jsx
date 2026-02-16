@@ -1330,14 +1330,14 @@ const Footer = () => {
 
 				<div className="flex flex-col lg:flex-row justify-between items-start gap-10">
 					<div className="lg:w-1/3 mb-8 lg:mb-0">
-						<img src="/logo.png" alt="Logmate Logo" className="h-12 md:h-16 w-auto object-contain mb-4" />
+						<img src="/final-logmate-logo.jpg" alt="Logmate Logo" className="h-12 md:h-16 w-auto object-contain mb-4" />
 						<p
 							className="text-sm opacity-70 leading-[1.5em]"
 							style={{
 								fontFamily: "'Instrument Sans', sans-serif",
 							}}
 						>
-							© Logmate 2025 - All Rights Reserved
+							© Logmate Engineering and Services Private Limited 2025 - All Rights Reserved
 						</p>
 						<div className="flex space-x-4 mt-4">
 							<a href="#" aria-label="Twitter">
