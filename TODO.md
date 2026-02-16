@@ -3,4 +3,4 @@
 - button to download complete MS LOGMATE Profile.pdf on click [done]
 - fix client logos
 - social media logos
-- 
+- setup office on maps
