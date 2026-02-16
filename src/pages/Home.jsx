@@ -3,6 +3,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import UseCasesCard from "../components/UseCasesCard";
 
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// Icons
+import { Clock, ClipboardCheck, Zap, UserCheck, Users } from "lucide-react";
+
 // --- Animation Variants ---
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -90,18 +100,18 @@ const FeatureCard = ({ imageSrc, title, description, linkText, linkHref }) => (
       alt={title}
       className="w-full h-48 md:h-64 object-cover"
     />
-    <div className="p-6 md:p-8 flex flex-col flex-grow justify-between bg-[radial-gradient(94%_69%_at_50%_100%,_rgb(24,24,24)_0%,_rgba(241,206,247,0)_100%)] bg-opacity-40 text-white">
+    <div className="p-6 md:p-8 flex flex-col flex-grow justify-between bg-opacity-40">
       <div>
-        <h3 className="text-2xl font-medium leading-[1.4em] mb-2 font-['Instrument_Sans']">
+        <h3 className="text-2xl font-medium leading-[1.4em] mb-2 font-['Instrument_Sans'] text-[#181818]">
           {title}
         </h3>
-        <p className="text-lg font-medium leading-[1.3em] mb-4 font-['Instrument_Sans']">
+        <p className="text-lg font-medium leading-[1.3em] mb-4 font-['Instrument_Sans'] text-gray-600">
           {description}
         </p>
       </div>
       <Link
         to={linkHref}
-        className="inline-block mt-auto px-6 py-3 bg-white text-[#181818] text-sm font-medium rounded-full hover:bg-gray-200 transition-colors self-start font-['Instrument_Sans']"
+        className="items-center bg-gray-100 backdrop-blur-sm border border-white/20 transition-colors font-['Instrument_Sans'] inline-block mt-auto px-6 py-3 text-[#181818] text-sm font-medium rounded-full hover:bg-gray-200 self-start"
       >
         {linkText}
       </Link>
@@ -145,11 +155,11 @@ const Home = () => {
 
   // Updated stats for "Why Choose Us" section
   const stats = [
-    { label: "Years Experience", value: "22+" },
-    { label: "Completed Projects", value: "500+" },
-    { label: "Power Handling", value: "100+ MW" },
-    { label: "Happy Customers", value: "200+" }, // Made up
-    { label: "Expert Employees", value: "50+" }, // Made up
+    { label: "Years Experience", value: "22+", icon: <Clock /> },
+    { label: "Completed Projects", value: "500+", icon: <ClipboardCheck /> },
+    { label: "Power Handling", value: "100+ MW", icon: <Zap /> },
+    { label: "Happy Customers", value: "200+", icon: <UserCheck /> }, // Made up
+    { label: "Expert Employees", value: "50+", icon: <Users /> }, // Made up
   ];
 
   const features = [
@@ -246,6 +256,46 @@ const Home = () => {
       image:
         "https://framerusercontent.com/images/JkvrN47DAtz5GlxOdbsBoP70CvE.jpeg",
     },
+  ];
+
+  const clientReviews = [
+    {
+      quote:
+        "Logmate's professionalism and expertise in power solutions are unmatched. Their team ensured our factory was up and running with minimal downtime.",
+      name: "Ahmed Khan",
+      post: "Operations Director",
+      company: "Textile Mills Ltd.",
+    },
+    {
+      quote:
+        "The solar installation provided by Logmate has significantly reduced our energy costs. Highly recommended for sustainable solutions.",
+      name: "Sara Ali",
+      post: "CEO",
+      company: "Green Innovations",
+    },
+    {
+      quote:
+        "Reliable, efficient, and always available for support. Logmate is our go-to partner for all electrical engineering needs.",
+      name: "Usman Tariq",
+      post: "Project Manager",
+      company: "ConstructCo",
+    },
+    {
+      quote:
+        "Their attention to detail and commitment to quality is impressive. We are extremely satisfied with their transformer services.",
+      name: "Faisal Rehman",
+      post: "Chief Engineer",
+      company: "PowerGrid Solutions",
+    },
+  ];
+
+  const partners = [
+    "https://via.placeholder.com/150?text=Siemens",
+    "https://via.placeholder.com/150?text=Schneider",
+    "https://via.placeholder.com/150?text=ABB",
+    "https://via.placeholder.com/150?text=Perkins",
+    "https://via.placeholder.com/150?text=CAT",
+    "https://via.placeholder.com/150?text=Cummins",
   ];
 
   return (
@@ -435,6 +485,9 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
+                <div className="flex justify-center mb-4 text-[#EF2E24] opacity-80">
+                  {React.cloneElement(stat.icon, { className: "w-10 h-10" })}
+                </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-[#EF2E24] mb-2 font-['Instrument_Sans']">
                   {stat.value}
                 </h3>
@@ -536,6 +589,105 @@ const Home = () => {
               <ArrowRightIcon className="w-5 h-5 ml-2" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* CLIENT REVIEWS */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-4 md:px-8 max-w-screen-xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#181818] mb-4 font-['Instrument_Sans']">
+              What Our Clients Say
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto font-['Instrument_Sans']">
+              Trusted by industry leaders for our commitment to excellence and
+              reliability.
+            </p>
+          </div>
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 2 }, // keeping 2 for better readability of text
+            }}
+            className="pb-12"
+          >
+            {clientReviews.map((review, idx) => (
+              <SwiperSlide key={idx} className="h-auto">
+                <div className="bg-gray-50 p-8 rounded-2xl h-full flex flex-col justify-between border border-gray-100">
+                  <div className="mb-6">
+                    <div className="text-[#EF2E24] mb-4">
+                      <svg
+                        width="40"
+                        height="40"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+                      </svg>
+                    </div>
+                    <p className="text-gray-700 text-lg leading-relaxed italic font-['Instrument_Sans']">
+                      "{review.quote}"
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-500 font-bold text-xl">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#181818] font-['Instrument_Sans']">
+                        {review.name}
+                      </h4>
+                      <p className="text-sm text-gray-500 font-['Instrument_Sans']">
+                        {review.post}, {review.company}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-4 md:px-8 max-w-screen-xl">
+          <h3 className="text-center text-gray-400 font-medium uppercase tracking-widest mb-10 text-sm font-['Instrument_Sans']">
+            Trusted Partners
+          </h3>
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={40}
+            slidesPerView={2}
+            loop={true}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              768: { slidesPerView: 4 },
+              1024: { slidesPerView: 5 },
+            }}
+            className="opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
+          >
+            {partners.map((logo, idx) => (
+              <SwiperSlide
+                key={idx}
+                className="flex items-center justify-center"
+              >
+                <img
+                  src={logo}
+                  alt={`Partner ${idx + 1}`}
+                  className="max-h-12 w-auto object-contain"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
